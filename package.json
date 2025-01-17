@@ -10,10 +10,13 @@
   },
   "dependencies": {
     "@types/lodash": "^4.17.14",
+    "framer-motion": "^11.18.0",
     "lodash": "^4.17.21",
     "next": "15.1.4",
     "react": "^19.0.0",
+    "react-card-flip": "^1.2.3",
     "react-dom": "^19.0.0",
+    "react-infinite-scroll-component": "^6.1.0",
     "zustand": "^5.0.3"
   },
   "devDependencies": {

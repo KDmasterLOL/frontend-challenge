@@ -15,11 +15,15 @@ export default function Header(props: HTMLAttributes<HTMLElement>) {
 
   return (
     <header {...props}>
-      <nav>
-        <ul>
+      <nav className="bg-primary-500 h-16">
+        <ul className="px-[62px] flex h-full justify-stretch items-stretch">
           {links.map((v, i) => (
             <li key={i}>
-              <Link href={v.href} className="" activeClassName="">
+              <Link
+                href={v.href}
+                className="text-sm flex items-center text-white/60 size-full px-5"
+                activeClassName="bg-primary-600 !text-white"
+              >
                 {v.display_name}
               </Link>
             </li>

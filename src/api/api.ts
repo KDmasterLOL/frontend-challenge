@@ -1,7 +1,8 @@
 import { Cats } from "@/types";
 
 const BASE_URL = "https://api.thecatapi.com/v1/";
-const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
+const API_KEY =
+  "live_K8MFoCOYLAKCKIh44ftGu4MtIcwy2N4D6jyQ0HBHhShuwvhwJNRAdwOFrExW37TF";
 
 type QueryParams = Partial<{
   limit: number; // 1 - 100

@@ -1,0 +1,3 @@
+export const PAGE_SIZE = 10;
+export const ANIMATION_DELAY = 0.05;
+export const PAGE_ANIMATION_TIME = ANIMATION_DELAY * PAGE_SIZE;

@@ -3,14 +3,14 @@ import _ from "lodash";
 import { Cat, Cats } from "@/types";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
+import { PAGE_SIZE } from "@/lib/constants";
 interface CatStore {
   cats: Cats;
   favorites: Cats;
   favorite: (cat: Cat) => void;
   unfavorite: (cat: Cat) => void;
-  loadCats: () => void;
+  loadCats: () => Promise<void>;
 }
-const page_size = 10;
 export const useCatStore = create<CatStore>()(
   persist(
     (set, get) => ({
@@ -33,8 +33,8 @@ export const useCatStore = create<CatStore>()(
         });
       },
       loadCats: async () => {
-        const next_page = Math.floor(get().cats.length / page_size);
-        const cats = await get_random_images(page_size, next_page);
+        const next_page = Math.floor(get().cats.length / PAGE_SIZE);
+        const cats = await get_random_images(PAGE_SIZE, next_page);
         return set((state) => {
           return { ...state, cats: _.unionBy(state.cats, cats, "id") };
         });
