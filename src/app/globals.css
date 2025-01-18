@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+  * {
+    overflow: visible;
+  }
   :root {
     --background: #ffffff;
     --primary-500: #2196f3;

@@ -4,7 +4,7 @@ import { Cat, Cats } from "@/types";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { PAGE_SIZE } from "@/lib/constants";
-interface CatStore {
+export interface CatStore {
   cats: Cats;
   favorites: Cats;
   favorite: (cat: Cat) => void;

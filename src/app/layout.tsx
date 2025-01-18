@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
+import "animate.css";
 import "./globals.css";
-import Header from "./Header";
-import LayoutTransition from "./LayoutTransition";
+import { Header, LayoutTransition } from "@/components";
 
 const roboto = Roboto({
   weight: ["400"],
@@ -27,7 +27,7 @@ export default function RootLayout({
       >
         <Header></Header>
         <LayoutTransition>
-          <main className="px-4 sm:px-[62px] py-4 sm:py-8">{children}</main>
+          <main className="px-4 sm:px-[62px] py-4 sm:py-7">{children}</main>
         </LayoutTransition>
       </body>
     </html>
