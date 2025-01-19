@@ -21,7 +21,7 @@ export default function Header(props: HTMLAttributes<HTMLElement>) {
             <li key={i}>
               <Link
                 href={v.href}
-                className="text-sm flex items-center text-white/60 size-full px-5"
+                className="text-sm flex items-center text-white/60 size-full px-5 transition-colors hover:!text-white"
                 activeClassName="bg-primary-600 !text-white"
               >
                 {v.display_name}
