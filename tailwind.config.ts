@@ -31,7 +31,7 @@ export default {
         },
       },
       animation: {
-        zoomInRotate: "zoomInRotate 1s ease-out forwards",
+        zoomInRotate: "zoomInRotate 1s ease-out",
       },
     },
   },

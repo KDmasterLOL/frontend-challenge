@@ -14,10 +14,10 @@ export default function InifityScrollCats({
   const state = useCatStore();
   const [page, setPage] = useState(1);
 
-  const catss = useMemo(() => state[catsKey], [state, catsKey]);
+  const cats = useMemo(() => state[catsKey], [state, catsKey]);
   const hasMore = useMemo(
-    () => (catsKey == "favorites" ? catss.length > page * PAGE_SIZE : true),
-    [page, catss],
+    () => (catsKey == "favorites" ? cats.length > page * PAGE_SIZE : true),
+    [page, cats],
   );
 
   useEffect(() => {
@@ -37,12 +37,15 @@ export default function InifityScrollCats({
     [],
   );
 
-  const cats = useMemo(() => catss.slice(0, page * PAGE_SIZE), [catss, page]);
+  const cats_displayed = useMemo(
+    () => cats.slice(0, page * PAGE_SIZE),
+    [cats, page],
+  );
 
   return (
-    <article className="">
+    <article>
       <InfiniteScroll
-        dataLength={cats.length}
+        dataLength={cats_displayed.length}
         next={fetchMoreData}
         className="!overflow-visible"
         hasMore={hasMore}
@@ -53,7 +56,7 @@ export default function InifityScrollCats({
         }
         scrollThreshold={"200px"}
       >
-        <CatsList cats={cats} className="mx-auto"></CatsList>
+        <CatsList cats={cats_displayed} className="mx-auto"></CatsList>
       </InfiniteScroll>
     </article>
   );

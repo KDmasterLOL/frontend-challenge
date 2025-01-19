@@ -45,7 +45,6 @@ export default function CatCard({
   }, []);
   const is_favorite = favorites.some((c) => c.id == cat.id);
   const onClick = () => {
-    console.log("FAVORITE", cat, favorites, is_favorite);
     if (is_favorite == false) {
       favorite(cat);
       emitConfetti();
@@ -55,7 +54,7 @@ export default function CatCard({
   return (
     <article
       className={
-        "relative group transition-[box-shadow,transform] duration-500 hover:scale-[114%] hover:shadow-[0_4px_4px_0_black] " +
+        "relative group/card transition-[box-shadow,transform] duration-500 hover:scale-[114%] hover:shadow-[0_4px_4px_0_black] " +
         className
       }
       {...props}
@@ -84,7 +83,7 @@ export default function CatCard({
       </ReactCardFlip>
       <Button
         onClick={onClick}
-        className="!absolute bottom-4 right-4 transition-[opacity,transform] duration-500 ease-out opacity-0 group-hover:opacity-100 active:scale-125"
+        className="!absolute bottom-4 right-4 transition-[opacity,transform] duration-500 ease-out opacity-0 group-hover/card:opacity-100 active:scale-125"
         shadow={<Like className="text-blue-900"></Like>}
         maxShadowDistance={2}
         cursorDistance={100}
