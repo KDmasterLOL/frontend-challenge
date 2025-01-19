@@ -66,7 +66,7 @@ export default function CatCard({
         flipDirection="horizontal"
       >
         <Image
-          src="/placeholder.png"
+          src="/frontend-challenge/placeholder.png"
           width={225}
           height={225}
           className="size-full [image-rendering:pixelated]"
