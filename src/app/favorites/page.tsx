@@ -9,7 +9,7 @@ export function generateMetadata(): Metadata {
 
 export default function Favorites() {
   return (
-    <article>
+    <article className="py-2">
       <InifityScrollCats catsKey="favorites"></InifityScrollCats>
     </article>
   );
