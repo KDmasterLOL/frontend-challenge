@@ -18,6 +18,21 @@ export default {
           600: "var(--primary-600)",
         },
       },
+      keyframes: {
+        zoomInRotate: {
+          "0%": {
+            transform: "scale(0.0) rotate(30deg)",
+            opacity: "0",
+          },
+          "100%": {
+            transform: "scale(1) rotate(0deg)",
+            opacity: "1",
+          },
+        },
+      },
+      animation: {
+        zoomInRotate: "zoomInRotate 1s ease-out forwards",
+      },
     },
   },
   plugins: [],

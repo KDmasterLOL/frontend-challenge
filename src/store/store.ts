@@ -28,7 +28,7 @@ export const useCatStore = create<CatStore>()(
         return set((state) => {
           return {
             ...state,
-            favorites: state.favorites.filter((v) => v != cat),
+            favorites: state.favorites.filter((v) => v.id != cat.id),
           };
         });
       },

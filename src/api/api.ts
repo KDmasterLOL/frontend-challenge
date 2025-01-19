@@ -31,8 +31,17 @@ export async function get_random_images(
   page: number,
 ): Promise<Cats> {
   const query = get_query("images/search", { limit: page_size, page });
-  console.log(query);
-  const response = await fetch(query);
-  const data = await response.json();
-  return data;
+  try {
+    const response = await fetch(query);
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Fetch error:", error);
+  }
+  return Promise.resolve([]);
 }
